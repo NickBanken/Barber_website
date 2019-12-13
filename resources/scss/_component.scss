@@ -1,0 +1,18 @@
+.btn{
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    border-radius: 2px;
+    color:#fff;
+    align-self: flex-start;
+    justify-self: flex-end;
+
+    margin-top: auto;
+
+    &--standard{
+        background-color:#272727;     
+    }
+
+    &--primary{
+        background-color:var(--color-primary)
+    }
+}

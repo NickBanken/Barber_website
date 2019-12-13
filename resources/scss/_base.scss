@@ -1,0 +1,81 @@
+:root{
+    --color-primary:#00aeef;
+}
+
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('../fonts/proxima_nova_thin-webfont.woff2') format('woff2'),
+         url('../fonts/proxima_nova_thin-webfont.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('../fonts/proximanova-regular-webfont.woff2') format('woff2'),
+         url('../fonts/proximanova-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('../fonts/proxima_nova_bold-webfont.woff2') format('woff2'),
+         url('../fonts/proxima_nova_bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+
+*{
+    padding:0;
+    margin: 0;
+    
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    
+}
+
+*,*:before,*:after{
+    box-sizing: inherit;
+}
+
+
+body{
+    font-family: proxima_nova;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.6;
+    // height: 100vh;
+    // perspective: 1px;
+    // transform-style: preserve-3d;
+    
+    
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+.mt-10{
+    margin-top:10rem;
+}
+
+.px-5{
+    padding: 0 5rem;
+}
+
