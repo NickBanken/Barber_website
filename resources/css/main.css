@@ -508,7 +508,9 @@ html {
   font-size: 1.6rem;
   color: #fff; }
   .footer__container {
-    padding: 2rem; }
+    padding: 2rem;
+    display: flex;
+    flex-direction: column; }
   .footer__social {
     margin-bottom: 3rem; }
   .footer__heading {
@@ -517,10 +519,80 @@ html {
   .footer__hours__item {
     display: flex;
     justify-content: space-between; }
+  .footer__location__holder {
+    margin: 0 auto; }
   .footer__location__item {
     text-decoration: none;
     list-style-type: none;
     line-height: 1.2; }
+  .footer__links__item {
+    text-decoration: none;
+    list-style: none; }
+    .footer__links__item a {
+      color: #fff; }
+
+menu:last-child {
+  background: red; }
+
+.menu {
+  padding-bottom: 20rem; }
+  .menu__item {
+    margin-bottom: 4rem;
+    font-size: 1.6rem; }
+  .menu__title {
+    display: flex;
+    justify-content: space-between; }
+  .menu__description {
+    font-size: 1.3rem;
+    font-style: italic;
+    width: 80%; }
+
+.product {
+  font-weight: 800; }
+
+.info {
+  font-size: 1.1rem; }
+
+.contact {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  padding: 3rem 0; }
+  .contact__row {
+    border-top: solid 1px #cacaca;
+    border-bottom: solid 1px #cacaca;
+    padding: 3rem 0; }
+  .contact p {
+    font-size: 1.6rem; }
+  .contact h2 {
+    margin-top: 5rem; }
+  .contact__hours {
+    font-size: 1.6rem; }
+    .contact__hours__item {
+      display: flex;
+      justify-content: space-between; }
+  .contact__location__item {
+    font-size: 1.6rem;
+    list-style: none; }
+  .contact__map {
+    display: flex;
+    align-items: center; }
+
+.btn {
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  border-radius: 2px;
+  color: #fff;
+  align-self: flex-start;
+  justify-self: flex-end;
+  margin-top: auto; }
+  .btn--standard {
+    background-color: #272727; }
+  .btn--primary {
+    background-color: var(--color-primary); }
+
+.copyright {
+  font-size: 1.2rem;
+  color: #575757; }
 
 :root {
   --color-primary:#00aeef; }
@@ -567,18 +639,19 @@ a {
 .mt-10 {
   margin-top: 10rem; }
 
+.mb-10 {
+  margin-bottom: 10rem; }
+
 .px-5 {
   padding: 0 5rem; }
 
-.btn {
-  padding: 1rem 2rem;
-  font-size: 1.6rem;
-  border-radius: 2px;
-  color: #fff;
-  align-self: flex-start;
-  justify-self: flex-end;
-  margin-top: auto; }
-  .btn--standard {
-    background-color: #272727; }
-  .btn--primary {
-    background-color: var(--color-primary); }
+h2 {
+  font-size: 3rem;
+  margin: 7rem 0 3rem 0;
+  font-weight: 100; }
+
+h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 100; }

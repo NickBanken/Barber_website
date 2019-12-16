@@ -174,9 +174,11 @@
     font-size: 1.6rem;
     color:#fff;
 
-
     &__container{
         padding:2rem;
+
+        display: flex;
+        flex-direction: column;
     }
 
     &__social{
@@ -189,9 +191,7 @@
     }
 
     &__hours{
-        &__list{
-            // padding-right: 10rem;
-        }
+        
         
         &__item{
             display: flex;
@@ -201,6 +201,10 @@
 
     &__location{
 
+        &__holder{
+            margin: 0 auto;
+        }
+
         &__item{
             text-decoration: none;
             list-style-type: none;
@@ -208,6 +212,96 @@
         }
     }
 
+    &__links{
+        &__item{
+            text-decoration: none;
+            list-style: none;
+            a{
+                color:#fff;
+            }
+        }
+    }
 
     
+}
+
+menu:last-child{
+    background: red;
+}
+
+
+.menu{
+    padding-bottom: 20rem;
+    
+    
+    &__item{
+        margin-bottom: 4rem;
+        font-size: 1.6rem;
+    }
+
+    &__title{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__description{
+        font-size: 1.3rem;
+        font-style: italic;
+        width: 80%;
+    }
+
+}
+
+.product{
+    font-weight: 800;
+}
+
+.info{
+    font-size: 1.1rem;
+}
+
+
+//Contact page
+
+
+.contact{
+
+    
+    margin-top:10rem;
+    margin-bottom:10rem;
+    padding:3rem 0;
+
+    &__row{
+        border-top: solid 1px rgb(202, 202, 202);
+        border-bottom: solid 1px rgb(202, 202, 202);
+        padding:3rem 0;
+    }
+
+    p{
+        font-size: 1.6rem;
+    }
+
+    h2{
+        margin-top: 5rem;
+    }
+    &__hours{
+        font-size: 1.6rem;
+        &__item{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        
+    }
+
+
+    &__location__item{
+        font-size: 1.6rem;
+        list-style: none;
+    }
+
+    &__map{
+        display: flex;
+        align-items: center;
+    }
 }
