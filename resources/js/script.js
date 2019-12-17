@@ -31,3 +31,7 @@ createParallax("parallax__banner--2",".parallax__banner--2","Gezelligheid in bil
 
 createParallax("parallax__banner--3",".parallax__banner--3","Prijzen & services" );
 
+createParallax("parallax__banner--4",".parallax__banner--4","Contact" );
+
+createParallax("parallax__banner--5",".parallax__banner--5","Gallerij" );
+

@@ -265,8 +265,6 @@ menu:last-child{
 
 
 .contact{
-
-    
     margin-top:10rem;
     margin-bottom:10rem;
     padding:3rem 0;
@@ -282,7 +280,10 @@ menu:last-child{
     }
 
     h2{
-        margin-top: 5rem;
+        font-size: 3rem;
+        // margin: 7rem 0 3rem 0;
+        margin: 0rem 0 3rem 0;
+        font-weight: 100;
     }
     &__hours{
         font-size: 1.6rem;
@@ -290,10 +291,7 @@ menu:last-child{
             display: flex;
             justify-content: space-between;
         }
-
-        
     }
-
 
     &__location__item{
         font-size: 1.6rem;
