@@ -11,6 +11,8 @@
         margin-left: 10rem;
         height: 10rem;
         width: 10rem;
+
+     
     }
 
     &__image{
@@ -65,12 +67,36 @@
     display: block;
     margin-left:auto;
     margin-right:auto;
-    width:75%;
+    
     margin-top: 20rem;
     z-index: 1;
+    
+    &--1{
+        width:110%;
+        @media only screen and(max-width:$bp-medium) {
+            width:150%;
+            transform-origin: right;
+        }
+
+        @media only screen and(max-width:$bp-small) {
+            width:150%;
+            transform-origin: right;
+        }
+        
+      }
 
     &--2{
-      width: 55%;  
+      width: 70%;  
+      
+        @media only screen and(max-width:$bp-medium) {
+            width:80%;
+            transform-origin: center;
+        }
+
+        @media only screen and(max-width:$bp-small) {
+            width:100%;
+            transform-origin: center;
+        }
     }
 }
 
@@ -122,10 +148,21 @@
         font-weight: normal;
         line-height: 1.1;
         margin-bottom: 7.5rem;
+
+        @media only screen and ( max-width:$bp-medium) {
+            margin-bottom: 4rem;
+        }
     }
 
     &__container{
         margin-top:2rem;
+
+        a{
+            display: inline-block;
+            @media only screen and (max-width: $bp-medium) {
+                display: none;
+            }
+        }
     }
 
     &__text{
@@ -135,6 +172,10 @@
 
 .options{
     margin-bottom: 10rem;
+
+    @media only screen and(max-width:$bp-medium) {
+       margin-bottom: 3rem;
+    }
     
     &__title{
         font-size:3.5rem;
@@ -153,6 +194,21 @@
     &__container{
         display: flex;
         flex-direction:column;
+
+        @media only screen and(max-width:$bp-medium) {
+            align-content: center;
+        }
+
+        a{
+            display: inline-block;
+            margin: 0;
+            @media only screen and(max-width:$bp-medium) {
+                margin: 0 0 8rem 0;
+                align-self: center;
+                width: 50%;
+                text-align: center;
+            }
+        }
     }
 
     &__text{
@@ -168,7 +224,7 @@
 
 .footer{
     padding:5rem;
-    height: 40rem;
+    height: 100%;
     background:rgb(31, 31, 31);
 
     font-size: 1.6rem;
@@ -197,12 +253,17 @@
             display: flex;
             justify-content: space-between;
         }
+
+        &__holder{
+            text-align: center;
+        }
     }
 
     &__location{
 
         &__holder{
             margin: 0 auto;
+            
         }
 
         &__item{

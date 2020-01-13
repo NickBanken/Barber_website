@@ -36,7 +36,12 @@ createParallax("parallax__banner--4",".parallax__banner--4","Contact" );
 createParallax("parallax__banner--5",".parallax__banner--5","Gallerij" );
 
 
-
+window.addEventListener('resize',function(){
+    slideWidth = slide[0].getBoundingClientRect().width;
+    slide.forEach(setSlidePosition);
+    const currentSlide = track.querySelector('.current-slide');
+    track.style.transform = 'translateX(-' + currentSlide.style.left + ')';
+})
 
 
 
@@ -45,8 +50,7 @@ createParallax("parallax__banner--5",".parallax__banner--5","Gallerij" );
 
 const track = document.querySelector('.carousel__track');
 const slide = Array.from(track.children);
-console.log(track);
-console.log(slide);
+
 
 const nextButton = document.querySelector('.carousel__button--right');
 const prevButton = document.querySelector('.carousel__button--left');
@@ -54,7 +58,7 @@ const prevButton = document.querySelector('.carousel__button--left');
 const dotsNav = document.querySelector('.carousel__nav');
 const dots = Array.from(dotsNav.children);
 
-const slideWidth = slide[0].getBoundingClientRect().width;
+let slideWidth = slide[0].getBoundingClientRect().width;
 
 
 
@@ -76,6 +80,23 @@ const moveToSlide = (track,currentSlide,targetSlide) => {
     targetSlide.classList.add('current-slide');
 }
 
+const generateDots = () =>{
+    for(i = 0; i < slide.length; i++){
+       let list =  document.createElement('button');
+       
+       
+       if(i === 0){
+            list.setAttribute('class','carousel__indicator current-slide')
+            
+       }else{
+            list.setAttribute('class','carousel__indicator ')
+        }
+    dotsNav.append(list);
+    }
+}
+
+generateDots();
+
 
 
 const updateDots = (currentDot,targetDot) => {
@@ -93,7 +114,7 @@ prevButton.addEventListener('click', e => {
     
 
     if(currentSlide.previousElementSibling != undefined){
-        moveToSlide(track,currentSlide,prevSlide)
+        moveToSlidemoveToSlide(track,currentSlide,prevSlide)
         updateDots(currentDot,prevDot);
     }else{
         prevSlide = track.lastElementChild;
