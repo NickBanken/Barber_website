@@ -56,7 +56,7 @@ const nextButton = document.querySelector('.carousel__button--right');
 const prevButton = document.querySelector('.carousel__button--left');
 
 const dotsNav = document.querySelector('.carousel__nav');
-const dots = Array.from(dotsNav.children);
+
 
 let slideWidth = slide[0].getBoundingClientRect().width;
 
@@ -96,6 +96,9 @@ const generateDots = () =>{
 }
 
 generateDots();
+const dots = Array.from(dotsNav.children);
+
+console.log(dots);
 
 
 
@@ -111,10 +114,12 @@ prevButton.addEventListener('click', e => {
     let prevSlide = currentSlide.previousElementSibling;
     const currentDot = dotsNav.querySelector(".current-slide");
     let prevDot = currentDot.previousElementSibling;
+
+    console.log(currentSlide.previousElementSibling)
     
 
     if(currentSlide.previousElementSibling != undefined){
-        moveToSlidemoveToSlide(track,currentSlide,prevSlide)
+        moveToSlide(track,currentSlide,prevSlide)
         updateDots(currentDot,prevDot);
     }else{
         prevSlide = track.lastElementChild;
@@ -154,13 +159,14 @@ dotsNav.addEventListener('click',e =>{
     // what indicator was clicked on?
     const targetDot = e.target.closest('button');
 
-    console.log("test1");
     if(!targetDot)return;
 
     const currentSlide = track.querySelector(".current-slide");
     const currentDot = dotsNav.querySelector(".current-slide");
     const targetIndex = dots.findIndex(dot => dot === targetDot)
     const targetSlide = slide[targetIndex];
+    
+    console.log(targetDot)
 
     moveToSlide(track,currentSlide,targetSlide);
     updateDots(currentDot, targetDot);
