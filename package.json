@@ -8,7 +8,7 @@
     "sass:compile": "node-sass resources/scss/main.scss resources/css/main.css -w",
     "start": "npm-run-all --parallel devserver watch:sass",
     "compile:sass": "node-sass resources/scss/main.scss resources/css/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' resources/css/style.comp.css -o resources/css/style.prefix.css",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" resources/css/style.comp.css -o resources/css/style.prefix.css",
     "compress:css": "node-sass resources/css/style.prefix.css resources/css/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css"
   },
