@@ -50,11 +50,10 @@ a{
             margin: 0;
             display: inline-block;
             width: 100%;
+            
             text-align: center;
-
             max-height: 0px;
             opacity: 0;
-            // transition: all .3s ease-out;
 
             transition-property: max-height, opacity;
             transition-duration: .5s, .3s;
@@ -72,12 +71,16 @@ a{
         }
         
         li{
+
+            transform: translateX(0px);
             margin: 1rem 3.5rem;
+            
             @media only screen and(max-width:$bp-medium){
                 margin: 1rem 3rem;
             }
 
             @media only screen and(max-width:$bp-small){
+                transform: translateX(500px);
                 border-bottom:solid 1px rgb(218, 218, 218);
                 margin:0;
                 margin-right: -550px;
@@ -109,7 +112,6 @@ label{
 }
 
 #toggle:checked ~ .navbar__links{
-    
     max-height: 250px;
     opacity: 1;
     transition-property: max-height, opacity;
@@ -125,6 +127,7 @@ label{
 
 #toggle:checked ~ .navbar__links{
     li{
+        transform: translateX(0px);
         @media only screen and(max-width:$bp-small){
             border-bottom:solid 1px rgb(218, 218, 218);
             margin:0; 
@@ -135,11 +138,15 @@ label{
 #toggle:checked ~ .burger-close{
     display: inline-block;
     max-width: 100%;
+    height: 30px;
+    width: 30px;
     margin-right:2rem;
     opacity: 1;
     transition: all .3s linear;
     right:27px;
         .scissors{
+            height: 30px;
+            width: 30px;
             transform: rotate(0deg);
             // transition: transform .3s linear;
         }
@@ -151,6 +158,10 @@ label{
     margin:0;
     opacity: 0;
     transition: opacity .3s linear;
+    @media only screen and(max-width:$bp-small) {
+        height: 0px;
+        width: 0px;
+    }
 }
 
 
@@ -159,13 +170,6 @@ label{
     width: 0px;
     transform: rotate(360deg);
     transition: transform .3s linear;
-
-    @media only screen and(max-width:$bp-small) {
-        height: 30px;
-        width: 30px;
-    }
-    
-    
 }
 
 .bio{
@@ -189,24 +193,10 @@ label{
 }
 
 .parallax__banner{
-    // position: relative;
-    // display: block;
-    // margin-left:auto;
-    // margin-right:auto;
-    
-    // margin-top:12rem;
     display: inline-block;
-  height: auto;
-
-    
-    
-    // margin-top: 30rem;
+    height: auto;
     z-index: 1;
 
-   
-
-    
-    
     &--1{
         width: 65%;
         transform-origin: top;
@@ -230,6 +220,8 @@ label{
       }
 
     &--2{
+
+        filter: blur(2px);
       width: 70%;  
       transform-origin: bottom;
 
@@ -243,6 +235,10 @@ label{
 
         @media only screen and(max-width:$bp-small) {
             width:160%;
+        }
+
+        @media only screen and(max-width:$bp-xsmall) {
+            width:200%;
         }
     }
 
@@ -275,8 +271,13 @@ label{
             transform-origin: top right;
         }
 
-        @media only screen and(max-width:40rem) {
-            width:200%;
+        @media only screen and(max-width:$bp-small) {
+            width:210%;
+            transform-origin: top right;
+        }
+
+        @media only screen and(max-width:$bp-xsmall) {
+            width:280%;
             transform-origin: top right;
         }
     }
@@ -298,9 +299,14 @@ label{
             transform-origin: top right;
         }
 
-        @media only screen and(max-width:40rem) {
-            width:200%;
-            transform-origin: top right;
+        @media only screen and(max-width:$bp-small) {
+            width:220%;
+            transform-origin: top center;
+        }
+
+        @media only screen and(max-width:$bp-xsmall) {
+            width:270%;
+            transform-origin: top center;
         }
     }
 }
@@ -334,6 +340,38 @@ label{
     text-align: center;
 }
 
+
+.about__wrap{
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+
+    @media only screen and(max-width:$bp-medium) {
+        height: 200px;
+    }
+
+    img {
+        height: auto;
+        width: 400px;
+
+        @media only screen and(max-width:$bp-medium) {
+            width: 300px;
+        }
+    }
+
+    &--big{
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+
+        img{
+            width: 100%;
+        }
+    }
+   
+   }
+
 .about{
     margin: 10rem 0;
     &__gallery{
@@ -343,17 +381,19 @@ label{
     }
 
     &__wrapper{
-        width: 50rem;
+        width: 100%;
         height: 20rem;
         margin-bottom: 2rem;
         overflow:hidden;
         padding-right:105px;
 
         img{
-            height: auto;
-            width: 30rem;
+            object-fit: cover;
+           
 
         }
+
+        
     }
 
     &__title{

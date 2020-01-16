@@ -104,10 +104,14 @@
 
 .carousel__button--left{
     left:-35px;
+    height:100px;
+    width: 30px;
 }
 
 .carousel__button--right{
     right:-35px;
+    height:100px;
+    width: 30px;
 }
 
 .carousel__button img{
@@ -202,5 +206,18 @@
             }
             
         }
+    }
+}
+
+.hidden__mobile{
+    @media only screen and(max-width:$bp-small) {
+        display: none;
+    }
+}
+
+.visible__mobile{
+    display: none;
+    @media only screen and(max-width:$bp-small) {
+        display: inline-block;
     }
 }
