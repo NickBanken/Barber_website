@@ -1,5 +1,6 @@
 :root {
-  --color-primary:#00aeef; }
+  --color-primary:#00aeef;
+  --color-grey-dark:rgb(31, 31, 31); }
 
 @font-face {
   font-family: 'proxima_nova';
@@ -561,10 +562,14 @@ label {
   transition: opacity .3s linear; }
 
 .scissors {
-  height: 30px;
-  width: 30px;
+  height: 0px;
+  width: 0px;
   transform: rotate(360deg);
   transition: transform .3s linear; }
+  @media only screen and (max-width: 36rem) {
+    .scissors {
+      height: 30px;
+      width: 30px; } }
 
 .bio {
   background-color: #000;
@@ -611,24 +616,49 @@ label {
     @media only screen and (max-width: 36rem) {
       .parallax__banner--2 {
         width: 160%; } }
-  .parallax__banner--3, .parallax__banner--4, .parallax__banner--5 {
+  .parallax__banner--3, .parallax__banner--5 {
     width: 70%;
     transform-origin: center; }
     @media only screen and (max-width: 121rem) {
-      .parallax__banner--3, .parallax__banner--4, .parallax__banner--5 {
-        width: 95%;
+      .parallax__banner--3, .parallax__banner--5 {
+        width: 65%;
+        transform-origin: top; } }
+    @media only screen and (max-width: 100rem) {
+      .parallax__banner--3, .parallax__banner--5 {
+        width: 85%;
         transform-origin: top; } }
     @media only screen and (max-width: 75rem) {
-      .parallax__banner--3, .parallax__banner--4, .parallax__banner--5 {
-        width: 130%;
+      .parallax__banner--3, .parallax__banner--5 {
+        width: 100%;
         transform-origin: top right; } }
     @media only screen and (max-width: 62rem) {
-      .parallax__banner--3, .parallax__banner--4, .parallax__banner--5 {
-        width: 150%;
+      .parallax__banner--3, .parallax__banner--5 {
+        width: 130%;
         transform-origin: top right; } }
     @media only screen and (max-width: 48rem) {
-      .parallax__banner--3, .parallax__banner--4, .parallax__banner--5 {
-        width: 210%;
+      .parallax__banner--3, .parallax__banner--5 {
+        width: 160%;
+        transform-origin: top right; } }
+    @media only screen and (max-width: 40rem) {
+      .parallax__banner--3, .parallax__banner--5 {
+        width: 200%;
+        transform-origin: top right; } }
+  .parallax__banner--4 {
+    width: 90%;
+    transform-origin: top; }
+    @media only screen and (max-width: 75rem) {
+      .parallax__banner--4 {
+        width: 100%; } }
+    @media only screen and (max-width: 62rem) {
+      .parallax__banner--4 {
+        width: 130%; } }
+    @media only screen and (max-width: 48rem) {
+      .parallax__banner--4 {
+        width: 160%;
+        transform-origin: top right; } }
+    @media only screen and (max-width: 40rem) {
+      .parallax__banner--4 {
+        width: 200%;
         transform-origin: top right; } }
 
 .parallax__wrapper {
@@ -661,10 +691,14 @@ label {
     flex-wrap: wrap;
     justify-content: space-evenly; }
   .about__wrapper {
-    width: 100%;
-    margin-bottom: 2rem; }
+    width: 50rem;
+    height: 20rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    padding-right: 105px; }
     .about__wrapper img {
-      width: 100%; }
+      height: auto;
+      width: 30rem; }
   .about__title {
     font-size: 3.5rem;
     font-weight: normal;
@@ -756,7 +790,10 @@ label {
       align-self: center;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      transition: all .3s linear; }
+      .footer__links__item a:hover {
+        color: var(--color-primary); }
 
 menu:last-child {
   background: red; }
@@ -840,13 +877,22 @@ menu:last-child {
   justify-self: flex-end;
   margin-top: auto; }
   .btn--standard {
-    background-color: #272727; }
+    background-color: #272727;
+    transition: all .4s linear; }
+    .btn--standard:hover {
+      background-color: var(--color-primary); }
   .btn--primary {
     background-color: var(--color-primary);
-    display: inline-block; }
+    display: inline-block;
+    transition: all .4s linear; }
+    .btn--primary:hover {
+      background-color: #1291c4; }
   .btn--sm-only {
     background-color: var(--color-primary);
-    display: none; }
+    display: none;
+    transition: all .4s linear; }
+    .btn--sm-only:hover {
+      background-color: #1291c4; }
     @media only screen and (max-width: 36rem) {
       .btn--sm-only {
         display: inline-block; } }
@@ -932,3 +978,44 @@ menu:last-child {
 
 .carousel__indicator.current-slide {
   background: rgba(0, 0, 0, 0.75); }
+
+.icon {
+  height: 70%;
+  width: 70%;
+  fill: white;
+  z-index: 10; }
+  .icon__wrapper {
+    display: flex;
+    justify-content: start; }
+  .icon__bg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin: 0 5rem 0 0;
+    transform: translateY(0px);
+    transition: all .3s ease-in-out; }
+  .icon__fb:hover {
+    background-color: #4177eb;
+    transform: translateY(-4px); }
+  .icon__insta::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, #e6ca00 0%, #cf2135 51%, #7539ab 100%);
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0; }
+  .icon__insta:hover {
+    transform: translateY(-4px); }
+    .icon__insta:hover::before {
+      opacity: 1;
+      z-index: 1; }

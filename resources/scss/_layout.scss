@@ -155,10 +155,15 @@ label{
 
 
 .scissors{
-    height: 30px;
-    width: 30px;
+    height:0px;
+    width: 0px;
     transform: rotate(360deg);
     transition: transform .3s linear;
+
+    @media only screen and(max-width:$bp-small) {
+        height: 30px;
+        width: 30px;
+    }
     
     
 }
@@ -241,43 +246,63 @@ label{
         }
     }
 
-    &--3,&--4,&--5{
+    &--3,&--5{
         width: 70%;
         transform-origin: center;
 
         @media only screen and(max-width:121rem) {
-            width: 95%;
+            width: 65%;
+            transform-origin: top;
+        }
+
+        @media only screen and(max-width:100rem) {
+            width: 85%;
             transform-origin: top;
         }
 
         @media only screen and(max-width:$bp-largest) {
-            width: 130%;
+            width: 100%;
             transform-origin: top right;
         }
 
         @media only screen and(max-width:$bp-large) {
-            width:150%;
+            width:130%;
             transform-origin: top right;
         }
 
         @media only screen and(max-width:$bp-medium) {
-            width:210%;
+            width:160%;
+            transform-origin: top right;
+        }
+
+        @media only screen and(max-width:40rem) {
+            width:200%;
             transform-origin: top right;
         }
     }
 
-    // &--4{
-    //     width: 100%;
+    &--4{
+        width: 90%;
+        transform-origin: top;
 
-    //     @media only screen and(max-width:$bp-large) {
-    //         width:120%;
-    //     }
+        @media only screen and(max-width:$bp-largest) {
+            width:100%;
+        }
 
-    //     @media only screen and(max-width:$bp-medium) {
-    //         width:165%;
-    //         transform-origin: bottom right;
-    //     }
-    // }
+        @media only screen and(max-width:$bp-large) {
+            width:130%;
+        }
+
+        @media only screen and(max-width:$bp-medium) {
+            width:160%;
+            transform-origin: top right;
+        }
+
+        @media only screen and(max-width:40rem) {
+            width:200%;
+            transform-origin: top right;
+        }
+    }
 }
 
 .parallax__wrapper{
@@ -318,11 +343,16 @@ label{
     }
 
     &__wrapper{
-        width: 100%;
+        width: 50rem;
+        height: 20rem;
         margin-bottom: 2rem;
+        overflow:hidden;
+        padding-right:105px;
 
         img{
-            width: 100%;
+            height: auto;
+            width: 30rem;
+
         }
     }
 
@@ -469,6 +499,12 @@ label{
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                
+                transition: all .3s linear;
+
+                &:hover{
+                    color:var(--color-primary);
+                }
             }
         }
     }

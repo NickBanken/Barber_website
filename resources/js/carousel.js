@@ -46,9 +46,11 @@ const generateDots = () =>{
        
        if(i === 0){
             list.setAttribute('class','carousel__indicator current-slide')
+            list.setAttribute('aria-label',`carousel button ${i+1}`)
             
        }else{
             list.setAttribute('class','carousel__indicator ')
+            list.setAttribute('aria-label',`carousel button ${i+1}`)
         }
     dotsNav.append(list);
     }
