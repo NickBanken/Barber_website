@@ -19,12 +19,15 @@
     
     <header class="header">
         <nav class="navbar">
-            <a href="#" class="navbar__title"><img src="resources/images/davids-haircreation.jpg" class="navbar__image"></a>
+            <a href="#" class="navbar__title" aria-label="Home"><img src="resources/images/Logo.png" alt="Logo" class="navbar__image"></a>
+            <input type="checkbox" id="toggle">
+            <label for="toggle" class="burger">&#9776;</label>
+            <label for="toggle" class="burger-close"><img src="resources/images/Scissors_icon_black.svg" alt="close button" class="scissors"></label>
             <ul class="navbar__links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="prijzen.html">Prijzen</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="gallerij.html" class="currentLink">Gallerij</a></li>
+                <li><a href="index.html" aria-label="Home" class="currentLink">Home</a></li>
+                <li><a href="prijzen.html" aria-label="Prijzen">Prijzen</a></li>
+                <li><a href="contact.html" aria-label="Contact" >Contact</a></li>
+                <li><a href="gallerij.html" aria-label="Gallerij">Gallerij</a></li>
             </ul>
         </nav>
     </header>
@@ -92,7 +95,7 @@
         <div class="container">
             <div class="row footer__holder">
                 <div class="col-12 footer__social"> social icons</div>
-                <div class="col-4 footer__container">
+                <div class="col-12 col-sm-6 col-md-4 footer__container">
                     <div class="footer__hours__holder">
                         <h2 class="footer__heading">Openingsuren</h2>
                         <ul class="footer__hours__list">
@@ -106,7 +109,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-4 footer__container">
+                <div class="col-12 col-sm-6 col-md-4 footer__container">
                     <div class="footer__location__holder">
                         <h2 class="footer__heading">Locatie</h2>
                         <ul class="footer__location__list">
@@ -116,22 +119,22 @@
                         </ul>
                     </div>  
                 </div>
-                <div class="col-4 footer__container">
+                <div class="col-12 col-sm-6 col-md-4 footer__container">
                     <div class="footer__hours__holder">
                         <h2 class="footer__heading">Links</h2>
                         <div class="row">
                             <ul class="footer__links__list col-6">
-                                <li class="footer__links__item"><a href="#">Home</a></li>
-                                <li class="footer__links__item"><a href="#">Prijzen</a></li>
+                                <li class="footer__links__item"><a href="index.html">Home</a></li>
+                                <li class="footer__links__item"><a href="prijzen.html">Prijzen</a></li>
                             </ul>
                             <ul class="footer__links__list col-6">
-                                <li class="footer__links__item"><a href="#">Contact</a></li>
-                                <li class="footer__links__item"><a href="#">Gallerij</a></li>
+                                <li class="footer__links__item"><a href="contact.html">Contact</a></li>
+                                <li class="footer__links__item"><a href="gallerij.html">Gallerij</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 copyright">
+                <div class="col-sm-6 col-md-12 copyright">
                         &copy;Copyright 2019 - Nick Banken. All Rights Reserved.
                 </div>
             </div>
@@ -144,6 +147,7 @@
 
 
 <script src="resources/vendors/simpleParallax-master/dist/simpleParallax.js"></script>
+<script src="resources/js/carousel.js"></script>
 <script src="resources/js/script.js"></script>
 
 </body>
